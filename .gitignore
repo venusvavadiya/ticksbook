@@ -48,3 +48,6 @@ docker-compose.yml
 **/public/workbox-*.js.map
 **/public/worker-*.js.map
 **/public/fallback-development.js
+
+# Next.js
+.next
