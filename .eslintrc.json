@@ -1,0 +1,73 @@
+{
+  "root": true,
+  "env": {
+    "es2020": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@nrwl/nx/javascript",
+    "plugin:@nrwl/nx/typescript",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "plugins": [
+    "@nrwl/nx"
+  ],
+  "parserOptions": {
+    "project": "tsconfig.base.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@nrwl/nx/enforce-module-boundaries": [
+      "error",
+      {
+        "enforceBuildableLibDependency": true,
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": [
+              "*"
+            ]
+          }
+        ]
+      }
+    ],
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      {
+        "exceptAfterSingleLine": true
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-var-requires": "off",
+    "class-methods-use-this": [
+      "error",
+      {
+        "exceptMethods": [
+          "getNewInstance",
+          "getStreamNamePrefixes"
+        ]
+      }
+    ],
+    "global-require": "off",
+    "import/no-absolute-path": "off",
+    "import/prefer-default-export": "off",
+    "linebreak-style": "off",
+    "max-len": "off",
+    "react/destructuring-assignment": "off"
+  }
+}
